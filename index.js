@@ -47,11 +47,11 @@ app.get('/info', (req, res) => {
     <p>${date}</p>`)
 })
 
-app.get('/persons', (req, res) => {
+app.get('/api/persons', (req, res) => {
     res.json(persons)
 })
 
-app.get('/persons/:id', (req, res) => {
+app.get('/api/persons/:id', (req, res) => {
     const id = Number(req.params.id)
     const person = persons.find(person => person.id === id)
     if(person){
@@ -67,8 +67,9 @@ const generateId = () => {
     return id
 }
 
-app.post('/persons', (req, res) => {
+app.post('/api/persons', (req, res) => {
     const body = req.body
+    console.log(req.body)
     if(!body.name){
         return res.status(400).json({error: 'Name missing'})
     }
@@ -88,7 +89,7 @@ app.post('/persons', (req, res) => {
     res.json(person)
 })
 
-app.delete('/persons/:id', (req, res) => {
+app.delete('/api/persons/:id', (req, res) => {
     const id = Number(req.params.id)
     persons = persons.filter(person => person.id !== id)
     res.status(204).end()
