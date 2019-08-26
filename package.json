@@ -7,7 +7,8 @@
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "nodemon index.js",
-    "build:ui": "rm -r build && cd ../PKaijaFullstackCourse/osa2/puhelinluettelo/ && npm run build && cp -r build ../../../osa3/build/"
+    "build:ui": "rm -r build && cd ../PKaijaFullstackCourse/osa2/puhelinluettelo/ && npm run build && cp -r build ../../../osa3/build/",
+    "lint": "eslint ."
   },
   "author": "Paavo Kaijala",
   "license": "ISC",
@@ -20,6 +21,7 @@
     "morgan": "^1.9.1"
   },
   "devDependencies": {
+    "eslint": "^6.2.2",
     "nodemon": "^1.19.1"
   }
 }
